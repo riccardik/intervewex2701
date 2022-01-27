@@ -19,7 +19,7 @@ parsed_html = BeautifulSoup(html, 'html.parser')
 # automatic selection
 h2 = parsed_html.find_all("h2")
 for elm_ in h2:
-    print(elm_.text.replace("[edit]", ""))
+    # print(elm_.text.replace("[edit]", ""))
     if elm_.text.replace("[edit]", "")=="Finances":
         elm = elm_
         break
