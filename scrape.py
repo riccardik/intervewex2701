@@ -10,6 +10,8 @@ html = page.text
 
 parsed_html = BeautifulSoup(html, 'html.parser')
 
+# find and select the right table
+
 # manual selection
 # table = parsed_html.select("table")[1]
 
@@ -31,6 +33,7 @@ for row in table.findAll('tr'):
         cells.append(text)
     rows.append(cells)
 
+# format the table
 tab_num = []
 label_row = rows[0]
 for i in range(1, len(rows)):
@@ -47,6 +50,7 @@ for i in range(arr.shape[1]):
     arr[source.shape[0], i] = np.sum(source[:, i])
     arr[source.shape[0]+1,i] =  np.sum(source[:, i])/(source.shape[0])
 
+# save the table
 np.savetxt('table.csv', arr, delimiter=',',  newline='\n',  fmt="%f")
 
 arr_noyear = arr[:, 1:]
