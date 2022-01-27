@@ -3,4 +3,4 @@
 - Python 3.x
 - BeautifulSoup4
 - numpy
-- pandas
+- pandas (optional, for data formatting)
